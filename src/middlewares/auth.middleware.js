@@ -2,12 +2,12 @@ import jwt from "jsonwebtoken";
 
 
 export function authenticate(req,res,next){
-    // // -----------------------------------------------------------
-    // //  MODO DESARROLLO: Middleware Bypass (Simular sesión)
-    // // -----------------------------------------------------------
-    // req.user = { id_user: 1, id_rol: 1, email: "admin@dev.com" }; // Usuario mock
-    // return next(); // Pasa directo sin pedir ni validar token
-    // // -----------------------------------------------------------
+    // -----------------------------------------------------------
+    //  MODO DESARROLLO: Middleware Bypass (Simular sesión)
+    // -----------------------------------------------------------
+    req.user = { id_user: 1, id_rol: 1, email: "admin@dev.com" }; // Usuario mock
+    return next(); // Pasa directo sin pedir ni validar token
+    // -----------------------------------------------------------
 
     const authHeader = req.headers.authorization;
 

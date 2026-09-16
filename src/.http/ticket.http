@@ -1,10 +1,13 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlhdCI6MTc4OTU2NjkzMiwiZXhwIjoxNzg5NTc0MTMyfQ.eZmSisErPwQKx9hpQ1c-vW5NWssp9mK_bzpIC0Gn-g4
+
 ### Create Ticket
 
 POST http://localhost:3000/api/ticket
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-    "title" : "ComputadorPrueba1",
+    "title" : "ComputadorPrueba5",
     "id_creator_user" : "2",
     "id_assigned_user" : "1",
     "id_department" : "1",
@@ -17,8 +20,8 @@ Content-Type: application/json
 ### 
 
 ### Get All tickets
-
 GET http://localhost:3000/api/ticket
+Authorization: Bearer {{token}}
 
 ###
 
@@ -26,9 +29,10 @@ GET http://localhost:3000/api/ticket
 
 PATCH http://localhost:3000/api/ticket/2
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-    "closedAt" : "2026-09-17"
+    "closedAt" : "2026-09-19"
 }
 
 ###
@@ -36,13 +40,15 @@ Content-Type: application/json
 
 ### Delete ticket
 
-DELETE http://localhost:3000/api/ticket/5
+DELETE http://localhost:3000/api/ticket/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6MSwiaWF0IjoxNzg5NTU3MzQ1LCJleHAiOjE3ODk1NjQ1NDV9.Jp2iyKWivwCl6NVKiGdSaYYE6Gcb1d590QURZtXfcgM
 
 ###
 
 
 ### Search tiket By ID
 
-GET http://localhost:3000/api/ticket/2
+GET http://localhost:3000/api/ticket/6
+Authorization: Bearer {{token}}
 
 ###

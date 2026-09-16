@@ -1,8 +1,8 @@
 import { Department } from "./ModelDepartment.js";
-import { User } from "./ModelUser.js";
+import { User } from "./modelUser.js";
 import { Rol } from "./ModelRol.js";
 import { Specialization } from "./ModelSpecialization.js";
-import { StatesTicket } from "./modelstates_Ticket.js";
+import { StatesTicket } from "./modelStates_ticket.js";
 import { WorkTeam } from "./ModelWorkTeam.js";
 import { SupportDevice } from "./ModelSupportDevice.js";
 import { Support } from "./ModelSupport.js";
@@ -57,7 +57,7 @@ Support.belongsTo(User, {
 Ticket.hasMany(Support, {
     foreignKey: "id_ticket"
 });
-Ticket.belongsTo(Support,{
+Support.belongsTo(Ticket,{
     foreignKey: "id_ticket"
 });
 

@@ -1,4 +1,4 @@
-import { TeamUser } from "../models/ModelTeam_user.js";
+import { TeamUser } from "../models/ModelTeamUser.js";
 
 // Obtener todos los registros
 export function getTeamUser(data = {}) {
