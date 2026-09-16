@@ -1,18 +1,22 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6MSwiaWF0IjoxNzg5NTI4MjkxLCJleHAiOjE3ODk1MzU0OTF9.rbSi3-D8AQu48YiXL_i8FgDvLN8nfe5_Ug18HDWZDUs
+
 ### Get all users
 GET http://localhost:3000/api/user
+Authorization: Bearer {{token}}
 
 
 ###
 
 ### Search user by first_name
 GET http://localhost:3000/api/user/Andres
-
+Authorization: Bearer {{token}}
 
 ###
 
 ### Create user
 POST http://localhost:3000/api/user
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "first_name": "Andres",
@@ -21,7 +25,7 @@ Content-Type: application/json
     "email": "andres@gmail.com",
     "password": "123456",
     "id_rol": 1,
-    "id_departament": 1,
+    "id_department": 1,
     "id_specialization": 1
 }
 
@@ -29,22 +33,25 @@ Content-Type: application/json
 ###
 
 ### Delete user by ID
-DELETE http://localhost:3000/api/user/1
+DELETE http://localhost:3000/api/user/7
+Authorization: Bearer {{token}}
 
 
 ###
 
 ### Update user
-PATCH http://localhost:3000/api/user/1
+PATCH http://localhost:3000/api/user/10
 Content-Type: application/json
+Authorization: Bearer {{token}}
+
 
 {
     "first_name": "Andres",
     "last_name": "Gomez",
     "phone": "3009876543",
-    "email": "andresgomez@gmail.com",
-    "password": "654321",
-    "id_rol": 2,
+    "email": "guti@gmail.com",
+    "password": "12345",
+    "id_rol": 1,
     "id_departament": 1,
     "id_specialization": 2
 }

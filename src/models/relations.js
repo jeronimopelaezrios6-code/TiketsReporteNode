@@ -1,8 +1,8 @@
 import { Department } from "./ModelDepartment.js";
-import { User } from "./modelUser.js";
+import { User } from "./ModelUser.js";
 import { Rol } from "./ModelRol.js";
 import { Specialization } from "./ModelSpecialization.js";
-import { StatesTicket } from "./modelStates_ticket.js";
+import { StatesTicket } from "./modelstates_Ticket.js";
 import { WorkTeam } from "./ModelWorkTeam.js";
 import { SupportDevice } from "./ModelSupportDevice.js";
 import { Support } from "./ModelSupport.js";

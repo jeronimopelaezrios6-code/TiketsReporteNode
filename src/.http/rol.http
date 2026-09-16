@@ -1,11 +1,16 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6bnVsbCwiaWF0IjoxNzg5NTI1ODg1LCJleHAiOjE3ODk1MzMwODV9.TsGvNOaKTgebu6llJeS191YlNKAuUy02gseRXyuV2HE
+
 ### Get all roles
 GET http://localhost:3000/api/role
+Authorization: Bearer {{token}}
 
 
 ###
 
 ### Search role by name
 GET http://localhost:3000/api/role/Administrator
+Authorization: Bearer {{token}}
+
 
 
 ###
@@ -13,6 +18,8 @@ GET http://localhost:3000/api/role/Administrator
 ### Create role
 POST http://localhost:3000/api/role
 Content-Type: application/json
+Authorization: Bearer {{token}}
+
 
 {
     "name": "Administrator"
@@ -22,7 +29,8 @@ Content-Type: application/json
 ###
 
 ### Delete role by ID
-DELETE http://localhost:3000/api/role/1
+DELETE http://localhost:3000/api/role/6
+Authorization: Bearer {{token}}
 
 
 ###
@@ -30,6 +38,8 @@ DELETE http://localhost:3000/api/role/1
 ### Update role
 PATCH http://localhost:3000/api/role/1
 Content-Type: application/json
+Authorization: Bearer {{token}}
+
 
 {
     "name": "admin"

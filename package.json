@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "seed": "node src/database/seed.js"
+    "seed": "node src/database/poblar.js",
+    "seed2": "node src/database/createAdmin.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +14,10 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
     "mysql2": "^3.23.3",
     "sequelize": "^6.37.8"
   },

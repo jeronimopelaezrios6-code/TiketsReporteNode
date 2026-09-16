@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import { authenticate } from "../middlewares/auth.middleware.js";
 import {
     getTeamUsersController,
     getUsersByTeamController,
@@ -10,6 +10,9 @@ import {
 } from "../controllers/ControllerTeam_user.js";
 
 const router = Router();
+
+router.use(authenticate)
+
 
 // Obtener todas las relaciones usuario-equipo
 router.get(

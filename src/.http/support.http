@@ -1,7 +1,9 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6bnVsbCwiaWF0IjoxNzg5NTI1ODg1LCJleHAiOjE3ODk1MzMwODV9.TsGvNOaKTgebu6llJeS191YlNKAuUy02gseRXyuV2HE
+
 ### Create Support
 POST http://localhost:3000/api/support
 Content-Type: application/json
-
+Authorization: Bearer : {{token}}
 {
     "id_support" : "1",
     "comment" : "Prueba"
@@ -13,6 +15,8 @@ Content-Type: application/json
 ### List Support
 
 GET http://localhost:3000/api/support
+Authorization: Bearer : {{token}}
+
 
 ###
 

@@ -1,9 +1,15 @@
-export const DB_NAME = "tikets_reporte_node"
-export const DB_USER = "root"
-export const DB_PASS = ""
+import dotenv from 'dotenv';
+
+// Cargar las variables del archivo .env
+dotenv.config();
+
+export const DB_NAME = process.env.DB_NAME;
+export const DB_USER = process.env.DB_USER;
+export const DB_PASS = process.env.DB_PASS;
+
 export const OBJ_CONN = {
-    port : 3306,
-    host :  "localhost",
-    dialect: "mysql"
-}
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  dialect: process.env.DB_DIALECT
+};
 

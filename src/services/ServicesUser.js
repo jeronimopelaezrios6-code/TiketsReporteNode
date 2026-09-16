@@ -1,7 +1,8 @@
-import { createUser, getUser, updateUser, deleteUser, getUserName } from "../repositorys/RepositoryUser.js";
+import { createUser, getUser, updateUser, deleteUser, getUserName, findUserByEmail } from "../repositorys/RepositoryUser.js";
+import { encryptPassword } from "../utils/password.js";
 
 // register one User
-export function registerUser(data) {
+export async function registerUser(data) {
 
       if (
         !data.first_name ||
@@ -12,7 +13,22 @@ export function registerUser(data) {
     )  {
         return new Promise.reject(new Error("Incomplete Fields..."))
     }
-    return createUser(data)
+
+    const existingUser = await findUserByEmail(data.email);
+    if (existingUser) {
+        return Promise.reject(new Error("Email already registered..."));
+    }
+    const encryptedPassword = await encryptPassword(
+    data.password
+    );
+
+    const user = {
+        ...data,
+        password: encryptedPassword
+    };
+
+
+    return createUser(user);
 }
 
 
@@ -22,12 +38,26 @@ export function listUser() {
 }
 
 // update User
-export function modifyUser(data, id) {
+export async function modifyUser(data, id) {
     if (!id) {
         return new Promise.reject(new Error("The ID is required..."))
     }
+    
+    const existingUser = await findUserByEmail(data.email);
+    if (existingUser) {
+        return Promise.reject(new Error("Email already registered..."));
+    }
 
-    return updateUser(data, id)
+    const encryptedPassword = await encryptPassword(
+        data.password
+    );
+
+    const user = {
+        ...data,
+        password: encryptedPassword
+    };
+
+    return updateUser(user, id)
 }
 
 

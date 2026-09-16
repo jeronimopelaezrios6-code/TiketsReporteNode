@@ -1,18 +1,22 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZHJlc2dvbWV6QGdtYWlsLmNvbSIsImlhdCI6MTc4OTQ5MDQzOCwiZXhwIjoxNzg5NTc2ODM4fQ.BGf26or2u0VbtfkU4dipcR8wp-h-lHnT7Ke8gFEz-Z0
+
 ### Listar todos los departamentos
 GET http://localhost:3000/api/department
+Authorization: Bearer {{token}}
 
 
 ###
 
 ### Buscar departamento por nombre
 GET http://localhost:3000/api/department/Sistemas
-
+Authorization: Bearer {{token}}
 
 ###
 
 ### Crear departamento
 POST http://localhost:3000/api/department
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name": "Sistemas"
@@ -22,7 +26,8 @@ Content-Type: application/json
 ###
 
 ### Eliminar departamento por ID
-DELETE http://localhost:3000/api/department/2
+DELETE http://localhost:3000/api/department/6
+Authorization: Bearer {{token}}
 
 
 ###
@@ -30,6 +35,7 @@ DELETE http://localhost:3000/api/department/2
 ### Actualizar departamento
 PATCH http://localhost:3000/api/department/1
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "name": "Tecnologia"

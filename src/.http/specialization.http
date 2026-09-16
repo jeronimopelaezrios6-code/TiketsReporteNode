@@ -1,11 +1,15 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZHJlc2dvbWV6QGdtYWlsLmNvbSIsImlhdCI6MTc4OTQ5MDQzOCwiZXhwIjoxNzg5NTc2ODM4fQ.BGf26or2u0VbtfkU4dipcR8wp-h-lHnT7Ke8gFEz-Z0
+
 ### Get all specializations
 GET http://localhost:3000/api/specialization
-
+Authorization: Bearer {{token}}
 
 ###
 
 ### Search specialization by name
 GET http://localhost:3000/api/specialization/Backend
+Authorization: Bearer {{token}}
+
 
 
 ###
@@ -13,6 +17,8 @@ GET http://localhost:3000/api/specialization/Backend
 ### Create specialization
 POST http://localhost:3000/api/specialization
 Content-Type: application/json
+Authorization: Bearer {{token}}
+
 
 {
     "name": "Backend"
@@ -22,14 +28,18 @@ Content-Type: application/json
 ###
 
 ### Delete specialization by ID
-DELETE http://localhost:3000/api/specialization/1
+DELETE http://localhost:3000/api/specialization/5
+Authorization: Bearer {{token}}
+
 
 
 ###
 
 ### Update specialization
-PATCH http://localhost:3000/api/specialization/1
+PATCH http://localhost:3000/api/specialization/4
 Content-Type: application/json
+Authorization: Bearer {{token}}
+
 
 {
     "name": "Frontend"

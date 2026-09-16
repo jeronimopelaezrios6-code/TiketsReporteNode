@@ -1,0 +1,10 @@
+#   "token": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc0B0ZXN0LmNvbSIsImlkX3JvbCI6MSwiaWF0IjoxNzg5NTI4MjkxLCJleHAiOjE3ODk1MzU0OTF9.rbSi3-D8AQu48YiXL_i8FgDvLN8nfe5_Ug18HDWZDUs
+
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "carlos@test.com",
+    "password": "123456"
+}
