@@ -10,6 +10,7 @@ import SupportDeviceRoutes from "./src/Routes/RoutesSupportDevice.js";
 import SupportRoutes from "./src/Routes/RoutesSupport.js";
 import priorityRoutes from "./src/Routes/RoutesPriority.js"
 import TicketRoutes from "./src/Routes/RoutesTicket.js"
+import TeamUserRoutes from "./src/Routes/RoutesTeam_user.js"
 import "./src/models/relations.js"
 
 const app = express();
@@ -28,6 +29,7 @@ app.use("/api", priorityRoutes)
 
 // cano
 app.use("/api", StatesTicketRoute);
+app.use("/api", TeamUserRoutes);
 
 //Pelaez
 app.use("/api", SupportDeviceRoutes);

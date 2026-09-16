@@ -4,7 +4,9 @@ POST http://localhost:3000/api/ticket
 Content-Type: application/json
 
 {
-    "title" : "ComputadorPrueba3",
+    "title" : "ComputadorPrueba1",
+    "id_creator_user" : "2",
+    "id_assigned_user" : "1",
     "id_department" : "1",
     "id_WorkTeam" : "1",
     "id_device" : "2",
@@ -22,11 +24,11 @@ GET http://localhost:3000/api/ticket
 
 ### Update ticket
 
-PATCH http://localhost:3000/api/ticket/7
+PATCH http://localhost:3000/api/ticket/2
 Content-Type: application/json
 
 {
-    "title" : "ComputadorActualizado"
+    "closedAt" : "2026-09-17"
 }
 
 ###
@@ -34,13 +36,13 @@ Content-Type: application/json
 
 ### Delete ticket
 
-DELETE http://localhost:3000/api/ticket/6
+DELETE http://localhost:3000/api/ticket/5
 
 ###
 
 
 ### Search tiket By ID
 
-GET http://localhost:3000/api/ticket/
+GET http://localhost:3000/api/ticket/2
 
 ###
